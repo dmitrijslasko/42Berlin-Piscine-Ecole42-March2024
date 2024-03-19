@@ -6,7 +6,7 @@
 /*   By: dmlasko <dmlasko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 11:58:06 by dmlasko           #+#    #+#             */
-/*   Updated: 2024/03/15 11:33:29 by dmlasko          ###   ########.fr       */
+/*   Updated: 2024/03/18 19:54:36 by dmlasko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,15 @@ char	*ft_strcat(char *dest, char *src)
 	while (*dest)
 		dest++;
 	while (*src)
-		*dest++ = *src++;
+	{
+		*dest = *src;
+		dest++;
+		src++;
+	}
 	*dest = 0;
 	return (dest_ptr);
 }
-
-#include <string.h>
+/*#include <string.h>
 #include <stdio.h>
 int	main(void)
 {
@@ -36,3 +39,4 @@ int	main(void)
 	printf("\nFT FUNCTION: %s", ft_strcat(dest, src));
 	printf("\nLIB FUNCTION: %s\n\n", strcat(dest1, src1));
 }
+*/

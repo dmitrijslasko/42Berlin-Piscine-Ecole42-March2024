@@ -5,40 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmlasko <dmlasko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/14 11:58:06 by dmlasko           #+#    #+#             */
-/*   Updated: 2024/03/15 12:56:56 by dmlasko          ###   ########.fr       */
+/*   Created: 2024/03/14 11:18:06 by dmlasko           #+#    #+#             */
+/*   Updated: 2024/03/18 19:54:36 by dmlasko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	char		*dest_ptr;
 	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
-	dest_ptr = dest;
-	while (*dest)
-		dest++;
-
-	while (i < nb && *src)
-	{
-		*dest++ = *src++;
+	while (dest[i])
 		i++;
+	j = 0;
+	while (j < nb && src[j])
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
 	}
-	*dest = 0;
-	return (dest_ptr);
+	dest[i] = 0;
+	return (dest);
 }
-
+/*
 #include <string.h>
 #include <stdio.h>
 int	main(void)
 {
-	char	dest[256] = "abcde";
-	char	src[] = "";
+	char	dest[20] = "Hello ";
+	char	src[20] = "w!";
+	
+	char	dest1[20] = "Hello ";
+	char	src1[20] = "w!";
 
-	char	dest1[256] = "abcde";
-	char	src1[] = "fghij";
-
-	printf("\nFT FUNCTION: %s", ft_strncat(dest, src, 3));
-	printf("\nLIB FUNCTION: %s\n\n", strncat(dest1, src1, 3));
-}
+	printf("\nFT FUNCTION: %s", ft_strncat(dest, src, 5));
+	printf("\nLIB FUNCTION: %s\n\n", strncat(dest1, src1, 5));
+}*/

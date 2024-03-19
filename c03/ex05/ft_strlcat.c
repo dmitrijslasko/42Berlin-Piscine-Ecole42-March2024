@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmlasko <dmlasko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/14 11:58:06 by dmlasko           #+#    #+#             */
-/*   Updated: 2024/03/15 12:33:47 by dmlasko          ###   ########.fr       */
+/*   Created: 2024/03/15 19:30:38 by dmlasko           #+#    #+#             */
+/*   Updated: 2024/03/18 19:50:36 by dmlasko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char 	*ft_strstr(char *str, char *to_find)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	while (*str != *to_find)
-		str++;
+	unsigned int	i;
+	unsigned int	j;
 
-	if (*str == *to_find && *str)
-		return (str);
-	else
-		return ((void *)0);
+	i = 0;
+	while (dest[i])
+		i++;
+	j = 0;
+	while (j < size - 1 && src[j])
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = 0;
+	return (i + j - 1);
 }
-
-#include <string.h>
+/*
 #include <stdio.h>
 int	main(void)
 {
-	char	str[256] = "bag of needles here";
-	char	to_find[] = "needle";
-
-	char	str1[256] = "bag of needles here";
-	char	to_find1[] = "z";
-
-	printf("\nFT FUNCTION: %s", ft_strstr(str, to_find));
-	printf("\nLIB FUNCTION: %s\n\n", strstr(str1, to_find1));
-}
+	char	dest[20] = "Hello ";
+	char	src[20] = " !";
+	
+	printf("\nFT FUNCTION: LEN: %d\n\n", ft_strlcat(dest, src, 5));
+}*/
