@@ -32,7 +32,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	while (dest[i])
 		i++;
 	j = 0;
-	while (size < INT_MAX && j < size && src[j])
+	while (size - 1 < INT_MAX && j < size - 1 && src[j])
 	{
 		printf("%d < %d ", j, size - 1);
 		dest[i] = src[j];
