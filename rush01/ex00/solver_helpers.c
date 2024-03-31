@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 void	print_matrix(int matr[4][4]);
-
 int		check_cols_bottom(int matr[4][4], char *input);
 int		check_cols_top(int matr[4][4], char	*input);
 int		check_rows_left(int matr[4][4], char	*input);

@@ -14,19 +14,18 @@
 
 void	ft_putchar(char c);
 void	print_matrix(int matr[4][4]);
-
 void	init_combs(int *combs);
-
 void	solver(char input[16]);
 void	print_error(void);
-
 int		parse_input(char input[16], char *user_input);
 
 int	main(int argc, char *argv[])
 {
 	char	*input;
 
-	input = malloc(17);
+	input = (char *)malloc(17);
+	if (input == NULL)
+		return (0);
 	if (input == 0)
 	{
 		print_error();

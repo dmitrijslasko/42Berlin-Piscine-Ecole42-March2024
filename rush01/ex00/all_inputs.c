@@ -23,6 +23,10 @@ int	parse_input(char input[16], char *user_input)
 	{
 		if (*user_input == ' ')
 			spaces++;
+		if (*user_input == ' ' && *(user_input + 1) == ' ' && *(user_input + 1))
+			return (1);
+		if (*user_input != ' ' && *(user_input + 1) != ' ' && *(user_input + 1))
+			return (1);
 		else if (*user_input >= '1' && *user_input <= '4')
 		{
 			input[i] = *user_input;

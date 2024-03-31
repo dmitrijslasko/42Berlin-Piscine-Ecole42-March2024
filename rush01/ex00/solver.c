@@ -12,9 +12,7 @@
 
 void	print_error(void);
 void	init_combs(int *combs);
-
 void	fill_in_row(int matr[4][4], int *combs, int i, int row);
-
 int		solve_and_print(int matr[4][4], char *input);
 
 void	fill_row_nums_from_n(int n, int c[4])

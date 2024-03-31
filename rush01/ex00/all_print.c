@@ -33,7 +33,7 @@ void	print_matrix(int matr[4][4])
 		col = 0;
 		while (col < 4)
 		{
-			ft_putchar('0' + matr[row][col]);
+			ft_putchar('0' + matr[col][row]);
 			if (col < 3)
 				ft_putchar(' ');
 			if ((col + 1) % 4 == 0)

@@ -12,7 +12,7 @@
 
 int	calc_value(int *comb, int direction);
 
-int	check_rows_left(int matr[4][4], char	*input)
+int	check_rows_left(int matr[4][4], char *input)
 {
 	int	i;
 	int	j;
