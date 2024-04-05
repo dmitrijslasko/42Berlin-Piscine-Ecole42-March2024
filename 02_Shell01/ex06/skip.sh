@@ -1,3 +1,2 @@
 #/bin/sh
-
- sed -n '2 p'
+ls -l | awk 'NR%2'
