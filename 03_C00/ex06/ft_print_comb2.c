@@ -19,21 +19,12 @@ void	ft_putchar(char c)
 
 void	ft_print_numbers(int num1, int num2)
 {
-	int	digit1_1;
-	int	digit1_2;
-	int	digit2_1;
-	int	digit2_2;
-
-	digit1_1 = '0' + num1 / 10;
-	digit1_2 = '0' + num1 % 10;
-	digit2_1 = '0' + num2 / 10;
-	digit2_2 = '0' + num2 % 10;
-	ft_putchar(digit1_1);
-	ft_putchar(digit1_2);
+	ft_putchar('0' + num1 / 10);
+	ft_putchar('0' + num1 % 10);
 	ft_putchar(' ');
-	ft_putchar(digit2_1);
-	ft_putchar(digit2_2);
-	if (digit1_1 != '9' || digit1_2 != '8')
+	ft_putchar('0' + num2 / 10);
+	ft_putchar('0' + num2 % 10);
+	if (num1 / 10 != 9 || num1 % 10 != 8)
 	{
 		ft_putchar(',');
 		ft_putchar(' ');
@@ -58,3 +49,9 @@ void	ft_print_comb2(void)
 		num1++;
 	}
 }
+/* 
+int	main(void)
+{
+	ft_print_comb2();
+}
+ */
