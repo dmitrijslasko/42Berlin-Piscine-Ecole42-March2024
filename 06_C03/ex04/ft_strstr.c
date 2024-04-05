@@ -16,7 +16,7 @@ char	*ft_strstr(char *str, char *to_find)
 
 	if (*to_find == 0)
 		return (str);
-	while (*str)ls
+	while (*str)
 	{
 		j = 0;
 		while (str[j] == to_find[j])
@@ -29,10 +29,9 @@ char	*ft_strstr(char *str, char *to_find)
 	}
 	return ((void *)0);
 }
-
+/* 
 #include <string.h>
 #include <stdio.h>
-
 int	main(void)
 {
 	char	*test[10][5] = {	{"Hello world", "lo"},
@@ -81,4 +80,4 @@ int	main(void)
 	printf("\033[0;33m");
 	printf("PASSED TESTS: %d/%d\n", passed_tests, i);
 	printf("\033[0m");
-}
+} */

@@ -22,7 +22,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 		return (0);
 	return (*s1 - *s2);
 }
-
+/* 
  #include <stdio.h>
  #include <string.h>
  int	main(void)
@@ -38,3 +38,4 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
  	//printf("%s vs. %s: %d\n", "abd", "abc", strncmp("abd", "abc", 3));
  	//printf("%s vs. %s: %d\n\n", "12345", "1234a", strncmp("1234", "1232a", 3));
  }
+ */

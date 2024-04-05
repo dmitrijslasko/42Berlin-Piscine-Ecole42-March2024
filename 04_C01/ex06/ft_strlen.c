@@ -22,13 +22,14 @@
 
 int	ft_strlen(char *str)
 {
-	char *ptr = str;
-
+	char *ptr;
+	
+	ptr = str;
 	while (*ptr)
 		ptr++;
 	return (ptr - str);
 }
-
+/* 
 #include <stdio.h>
 
 int main(void)
@@ -37,3 +38,4 @@ int main(void)
     printf("THE NUMBER OF CHARS = %d\n", ft_strlen(string));
     return (0);
 }
+ */

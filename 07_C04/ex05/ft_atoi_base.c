@@ -54,10 +54,6 @@ int	str_to_int(char *str, char *base)
 	return (number);
 }
 
-/*
-Moulinette check #1:
-No check for whitespace in the base
-*/
 int	check_base(char *base)
 {
 	int	base_len;

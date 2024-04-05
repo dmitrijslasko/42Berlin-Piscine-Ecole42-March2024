@@ -10,18 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_char_is_alpha(char c)
+int	ft_char_is_lower(char c)
 {
-	if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z'))
-		return (0);
-	return (1);
+	return (c >= 'a' && c <= 'z');
 }
 
-int	ft_char_is_numeric(char c)
+int	ft_char_is_upper(char c)
 {
-	if (c < '0' || c > '9')
-		return (0);
-	return (1);
+	return (c >= 'A' && c <= 'Z');
+}
+
+int	ft_char_is_space(char c)
+{
+	return (c == ' ' || (c >= 9 && c <= 13) || (c >= 41 && c <= 57));
 }
 
 char	*ft_strcapitalize(char *str)
@@ -29,29 +30,35 @@ char	*ft_strcapitalize(char *str)
 	int	i;
 
 	i = 0;
-	while (str[i] != 0)
+	while (str[i])
 	{
-		if (i == 0 && str[i] >= 'a' && str[i] <= 'z')
-			str[i] -= 32;
-		else if (str[i] >= 'A' && str[i] <= 'Z')
+		if (ft_char_is_upper(str[i]))
 			str[i] += 32;
-		if ((i > 0 && str[i] >= 'a' && str[i] <= 'z')
-			&& ft_char_is_alpha(str[i - 1]) == 0
-			&& ft_char_is_numeric(str[i - 1]) == 0)
+		i++;
+	}
+	i = 0;
+	while (str[i])
+	{
+		while (ft_char_is_space(str[i]))
+			i++;
+		if (ft_char_is_lower(str[i]))
 			str[i] -= 32;
+		while (ft_char_is_space(str[i]) == 0)
+		 	i++;
 		i++;
 	}
 	return (str);
 }
+/* 
+#include <stdio.h>
+int main(void)
+{
+   char str[] = "salut, COMMENT tu vas ? 42mots"
+            " quarante-deux; cinquante+et+un";
+   printf("\nString before: %s\n", str);
+   printf("String after: %s\n", ft_strcapitalize(str));
+   printf("String after: %s\n\n", str);
 
-//#include <stdio.h>
-//int main(void)
-//{
-//    char str[] = "salut, COMMENT tu vas ? 42mots"
-//             " quarante-deux; cinquante+et+un";
-//    printf("\nString before: %s\n", str);
-//    printf("String after: %s\n", ft_strcapitalize(str));
-//    printf("String after: %s\n\n", str);
-
-//    return (0);
-//}
+   return (0);
+}
+ */

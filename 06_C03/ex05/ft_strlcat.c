@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-
 unsigned int	ft_strlen(char *str)
 {
 	unsigned int	i;
@@ -26,30 +24,32 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	j;
-	unsigned int	len;
+	unsigned int	total_len;
 
-	len = ft_strlen(dest) + ft_strlen(src);
+	total_len = ft_strlen(dest) + ft_strlen(src);
 	i = 0;
 	while (dest[i])
 		i++;
 	j = 0;
-	while (size - 1 < INT_MAX && j < size - 1 && src[j])
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
+	while (i < size - 1 && src[j])
+		dest[i++] = src[j++];
 	dest[i] = 0;
-	return (len);
+	return (total_len);
 }
-/*
+/* 
 #include <string.h>
 #include <stdio.h>
+
  int	main(void)
  {
  	char	dest[10] = "12345";
  	char	src[10] = "67890";
- 	printf("\nFT FUNCTION: LEN: %d\n", ft_strlcat(dest, src, 0));
+ 	printf("\nFT FUNCTION: LEN: %d\n", ft_strlcat(dest, src, 6));
  	printf("%s\n\n", dest);
+
+	char	dest1[10] = "12345";
+ 	char	src1[10] = "67890";
+ 	printf("\nFT FUNCTION: LEN: %d\n", strlcat(dest1, src1, 6));
+ 	printf("%s\n\n", dest1);
  }
  */
